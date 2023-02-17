@@ -1,6 +1,2 @@
 #!/bin/bash
-<<<<<<< HEAD
 gcc -c $CFILE > ${CFILE::-1}"o"
-=======
-gcc -E -o $CFILE.o $CFILE
->>>>>>> ca73da8... 2nd task and readme update
