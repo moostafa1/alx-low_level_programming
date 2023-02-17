@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -E -o main.o $CFILE 
+gcc -o $CFILE > {$CFILE::-1}"o"
