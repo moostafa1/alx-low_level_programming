@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -E -o $CFILE.o $CFILE
+gcc -E -o $CFILE [basename $CFILE | tr .c .o]
