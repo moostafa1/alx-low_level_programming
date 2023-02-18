@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * digits = prints digits from init to end
+ * digits - prints digits from init to end
  * @init: the starting number
  * @end : the ending number
  *
