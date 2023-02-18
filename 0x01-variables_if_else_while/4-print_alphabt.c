@@ -7,9 +7,8 @@
  *  @end: the ending character
  *
  */
-
 void alphabet(char init, char end)
-{
+
 	for (; init <= end; init++)
 	{
 		if (strchr("qe", init) == 0)
