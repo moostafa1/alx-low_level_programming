@@ -13,7 +13,7 @@ int main(void)
 	alphapet('a', 'z');
 	alphapet('A', 'Z');
 	putchar('\n');
-
+	
 	return (0);
 }
 
@@ -25,7 +25,6 @@ int main(void)
  * init - the starting char
  *  end - the last char
  *
- *  Return: Always 0 (Success)
  */
 
 void alphapet(char init, char end)
