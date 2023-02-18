@@ -18,6 +18,16 @@ int main(void)
 }
 
 
+
+/**
+ * alphapet - prints the alphapet
+ * 
+ * init - the starting char
+ *  end - the last char
+ *
+ *  Return: Always 0 (Success)
+ */
+
 void alphapet(char init, char end)
 {
 	for (; init <= end; init++)
