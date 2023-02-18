@@ -43,6 +43,6 @@ int main(void)
 
 void alphapet(char init, char end)
 {
-	for (; init <= end; init++)
+	for (; init >= end; init--)
 		putchar(init);
 }
