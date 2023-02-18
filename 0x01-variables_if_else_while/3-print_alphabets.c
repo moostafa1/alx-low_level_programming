@@ -24,6 +24,9 @@ int main(void)
  * alphapet - prints the alphapet between two characters
  * @init : the starting char
  * @end  : the last char
+ *
+ * Example:
+ * 	alphapet('a', 'd') --> abcd
  */
 
 void alphapet(char init, char end)
