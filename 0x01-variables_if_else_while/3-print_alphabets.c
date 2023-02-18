@@ -37,6 +37,8 @@ int main(void)
 
 /**
  * alphapet - prints the alphapet from init to end characters
+ * @init : the starting character
+ * @end  : the ending character
  *
  */
 
