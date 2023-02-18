@@ -10,7 +10,7 @@
 void digits(int init, int end)
 {
 	for (; init < end; init++)
-		printf("%d", init);
+		putchar(init+'0');
 }
 
 
