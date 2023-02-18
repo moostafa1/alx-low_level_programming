@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 /**
  * alphabet - prints the alphpet except 'q' and 'e' characters
