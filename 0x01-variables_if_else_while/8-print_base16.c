@@ -1,5 +1,17 @@
 #include <stdio.h>
 
+/**
+ * digits = prints digits from init to end
+ * @init: the starting number
+ * @end : the ending number
+ */
+
+void digits(int init, int end)
+{
+	for (; init < end; init++)
+		putchar(init + '0');
+}
+
 
 
 /**
@@ -11,7 +23,7 @@
  *		(including both: init and end)
  *
  * Example:
- * alphapet('a', 'd') --> abcd
+ *	alphapet('a', 'd') --> abcd
  */
 
 void alphapet(char init, char end)
@@ -30,7 +42,8 @@ void alphapet(char init, char end)
 
 int main(void)
 {
-	alphapet('z', 'a');
+	digits(0, 10);
+	alphapet('a', 'f');
 	putchar('\n');
 
 	return (0);
