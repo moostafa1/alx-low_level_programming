@@ -22,13 +22,10 @@ int main(void)
 
 /**
  * alphapet - prints the alphapet from init to end characters
- * @init : First operand
- * @end  : Second operand
+ * @init : the starting character
+ * @end  : the ending character
  *
- * Description:
- *	@init: the starting character
- *	@end : the ending character
- *
+ * Description: it prints the alphapet lies between init and end (including both: init and end)
  *
  * Example:
  *	alphapet('a', 'd') --> abcd
