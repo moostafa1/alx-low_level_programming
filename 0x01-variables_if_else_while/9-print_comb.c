@@ -16,12 +16,12 @@ int main(void)
 		if (i < 10 - 1)
 		{
 			putchar(',');
+			putchar(' ');
 		}
 		else
 		{
 			putchar('\n');
 		}
-		putchar(' ');
 	}
 	return (0);
 }
