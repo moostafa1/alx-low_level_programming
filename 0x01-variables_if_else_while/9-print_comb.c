@@ -13,11 +13,7 @@ int main(void)
 	for (; i < 10; i++)
 	{
 		putchar(i + '0');
-		if (i == 10 - 1)
-		{
-			putchar('$');
-		}
-		else
+		if (i < 10 - 1)
 		{
 			putchar(',');
 		}
