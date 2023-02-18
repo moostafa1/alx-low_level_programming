@@ -6,6 +6,8 @@
  * Return: Always 0 (Success)
  */
 
+void alphapet(char init, char end);
+
 int main(void)
 {
 	alphapet('a', 'z');
