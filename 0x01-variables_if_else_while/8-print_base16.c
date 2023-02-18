@@ -4,6 +4,9 @@
  * digits = prints digits from init to end
  * @init: the starting number
  * @end : the ending number
+ *
+ * Description: prints the digits lies between init and end
+ *		(including both: init and end)
  */
 
 void digits(int init, int end)
@@ -28,7 +31,7 @@ void digits(int init, int end)
 
 void alphapet(char init, char end)
 {
-	for (; init >= end; init--)
+	for (; init <= end; init++)
 		putchar(init);
 }
 
