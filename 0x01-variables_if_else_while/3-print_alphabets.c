@@ -1,23 +1,5 @@
 #include <stdio.h>
 
-/**
- * main - prints text
- *
- * Return: Always 0 (Success)
- */
-
-
-void alphapet(char init, char end);
-
-int main(void)
-{
-	alphapet('a', 'z');
-	alphapet('A', 'Z');
-	putchar('\n');
-
-	return (0);
-}
-
 
 
 /**
@@ -31,6 +13,28 @@ int main(void)
  * Example:
  *	alphapet('a', 'd') --> abcd
  */
+
+void alphapet(char init, char end);
+
+
+
+/**
+ * main - prints text
+ *
+ * Return: Always 0 (Success)
+ */
+
+int main(void)
+{
+	alphapet('a', 'z');
+	alphapet('A', 'Z');
+	putchar('\n');
+
+	return (0);
+}
+
+
+
 
 void alphapet(char init, char end)
 {
