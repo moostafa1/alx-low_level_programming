@@ -13,11 +13,11 @@ int main(void)
 	while (k < 8)
 	{
 		int i = 1;
-		
+
 		for (; i < 9; i++)
 		{
 			int j = 2;
-		       
+
 			while (j < 10)
 			{
 				if (k < i && i < j)
