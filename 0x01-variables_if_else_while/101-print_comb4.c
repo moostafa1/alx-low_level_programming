@@ -10,7 +10,7 @@ int main(void)
 {
 	int k = 0;
 
-	while(k<8)
+	while (k < 8)
 	{
 		int i = 1;
 		
