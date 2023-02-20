@@ -62,7 +62,7 @@ int main(void)
 			for (; k < max; k++)
 			{
 				int l = 0;
-				
+
 				for (; l < max; l++)
 				{
 					if (i != k || j != l)
@@ -70,12 +70,12 @@ int main(void)
 						print(i, j);
 						putchar(' ');
 						print(k, l);
-						condition(k, max-1, l, max-1);
+						condition(k, max - 1, l, max - 1);
 					}
 				}
 			}
 		}
 	}
-	
+
 	return (0);
 }
