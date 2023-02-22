@@ -8,11 +8,11 @@
 
 void print(int i, int j, int k, int l)
 {
-        putchar(i + '0');
-        putchar(j + '0');
-        putchar(' ');
-        putchar(k + '0');
-        putchar(l + '0');
+	putchar(i + '0');
+	putchar(j + '0');
+	putchar(' ');
+	putchar(k + '0');
+	putchar(l + '0');
 }
 
 
@@ -31,9 +31,9 @@ void condition(int i, int j, int k, int l, int comp)
 {
         if (i + j + k + l != comp)
         {
-                putchar(',');
-                putchar(' ');
-        }
+		putchar(',');
+		putchar(' ');
+	}
 }
 
 
@@ -47,37 +47,37 @@ void condition(int i, int j, int k, int l, int comp)
 
 int main(void)
 {
-        int i = 0;
-        int max = 10;
+	int i = 0;
+	int max = 10;
 
         while (i < max)
         {
-                int j = 0;
+		int j = 0;
 
-                while (j < max - 1)
-                {
-                        int k = 0;
+		while (j < max)
+		{
+			int k = 0;
 
-                        while (k < max)
+			while (k < max)
                         {
-                                int l = 0;
+				int l = 0;
 
-                                while (l < max)
+				while (l < max)
                                 {
-                                        if (((k * max) + l) > ((i * max) + j))
+					if (((k * max) + l) > ((i * max) + j))
                                         {
-                                                print(i, j, k, l);
-                                                condition(i, j, k, l, (((max - 1) * 3) + (max - 2)));
-                                        }
-                                        l++;
-                                }
-                                k++;
-                        }
-                        j++;
-                }
-                i++;
-        }
-        putchar('\n');
+						print(i, j, k, l);
+						condition(i, j, k, l, (((max - 1) * 3) + (max - 2)));
+					}
+					l++;
+				}
+				k++;
+			}
+			j++;
+		}
+		i++;
+	}
+	putchar('\n');
 
-        return (0);
+	return (0);
 }
