@@ -6,10 +6,13 @@
  * @j: second integer to print
  */
 
-void print(int i, int j)
+void print(int i, int j, int k, int l)
 {
-	putchar(i + '0');
-	putchar(j + '0');
+        putchar(i + '0');
+        putchar(j + '0');
+        putchar(' ');
+        putchar(k + '0');
+        putchar(l + '0');
 }
 
 
@@ -24,17 +27,13 @@ void print(int i, int j)
  * @c2: compare j with it
  */
 
-void condition(int i, int c1, int j, int c2)
+void condition(int i, int j, int k, int l, int comp)
 {
-	if (i != c1 || j != c2)
-	{
-		putchar(',');
-		putchar(' ');
-	}
-	else
-	{
-		putchar('\n');
-	}
+        if (i + j + k + l != comp)
+        {
+                putchar(',');
+                putchar(' ');
+        }
 }
 
 
@@ -48,34 +47,37 @@ void condition(int i, int c1, int j, int c2)
 
 int main(void)
 {
-	int i = 0;
-	int max = 10;
+        int i = 0;
+        int max = 10;
 
-	for (; i < max; i++)
-	{
-		int j = 0;
+        while (i < max)
+        {
+                int j = 0;
 
-		for (; j < max - 1; j++)
-		{
-			int k = 0;
+                while (j < max - 1)
+                {
+                        int k = 0;
 
-			for (; k < max; k++)
-			{
-				int l = 0;
+                        while (k < max)
+                        {
+                                int l = 0;
 
-				for (; l < max; l++)
-				{
-					if (i != k || j != l)
-					{
-						print(i, j);
-						putchar(' ');
-						print(k, l);
-						condition(k, max - 1, l, max - 1);
-					}
-				}
-			}
-		}
-	}
+                                while (l < max)
+                                {
+                                        if (((k * max) + l) > ((i * max) + j))
+                                        {
+                                                print(i, j, k, l);
+                                                condition(i, j, k, l, (((max - 1) * 3) + (max - 2)));
+                                        }
+                                        l++;
+                                }
+                                k++;
+                        }
+                        j++;
+                }
+                i++;
+        }
+        putchar('\n');
 
-	return (0);
+        return (0);
 }
