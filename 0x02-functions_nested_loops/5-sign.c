@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 /**
  * print_sign - prints the sign of an integer (+ve or -ve)
  * @n: input integer to get its sign
