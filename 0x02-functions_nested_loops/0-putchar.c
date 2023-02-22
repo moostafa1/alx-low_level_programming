@@ -11,10 +11,12 @@ int main(void)
 	char str[] = "_putchar\n";
 	unsigned int i = 0;
 
-	for (; i < sizeof(str); i++)
-	{
-		_putchar(str[i]);
-	}
+	/*for (; i < sizeof(str); i++)
+	*{
+	*	_putchar(str[i]);
+	*}
+	*/
+	_putchar('a');
 	
 	return (0);
 }
