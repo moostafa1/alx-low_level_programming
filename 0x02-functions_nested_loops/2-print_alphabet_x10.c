@@ -2,13 +2,13 @@
 
 
 /**
- * print_alphabet - prints all lowercase letters 10 times
+ * print_alphabet_x10 - prints all lowercase letters 10 times
  *
  * Return: none
  */
 void print_alphabet_x10(void)
 {
-	int i = 10;
+	int i = 0;
 
 	for (; i < 10; i++)
 	{
