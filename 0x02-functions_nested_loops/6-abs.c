@@ -1,6 +1,6 @@
 /**
  * _abs - prints the absolute value of integer
- * @n: input integer to get its absolute
+ * @i: input integer to get its absolute
  *
  * Return: integer absolute
  */
