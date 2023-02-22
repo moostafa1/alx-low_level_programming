@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include <string.h>
 
 
 /**
@@ -22,7 +23,7 @@ void print(char str[])
 {
 	int i = 0;
 
-	for (; i < sizeof(str); i++)
+	for (; i < strlen(str); i++)
 	{
 		_putchar(str[i]);
 	}
