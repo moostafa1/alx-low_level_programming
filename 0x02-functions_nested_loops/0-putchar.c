@@ -8,7 +8,7 @@
 
 void print(char str[])
 {
-	int i = 0;
+	unsigned int i = 0;
 
 	for (; i < sizeof(str); i++)
 	{
