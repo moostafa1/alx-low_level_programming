@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * print_sign - prints the sign of an integer (+ve or -ve)
