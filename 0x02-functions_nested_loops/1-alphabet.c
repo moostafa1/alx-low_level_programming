@@ -1,19 +1,20 @@
 #include "main.h"
 
 
-
 int _putchar(char c);
-void print_alphabet();
-
 
 /**
- * main - prints text
+ * print_alphabet - prints all lowercase letters
  *
- * Return: Always 0.
+ * Return: none
  */
-
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet();
-	return (0);
+	char start = 'a';
+	while(start <= 'z')
+	{
+		_putchar(start);
+		start++;
+	}
+	_putchar('\n');
 }
