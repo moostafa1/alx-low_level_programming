@@ -7,11 +7,7 @@
  *
  * Return: the inputed character 
  */
-
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
+int _putchar(char c);
 
 
 
@@ -22,11 +18,11 @@ int _putchar(char c)
  * Return: void
  */
 
-void print(char str[], int len)
+void print(char str[])
 {
 	int i = 0;
 
-	for (; i < len; i++)
+	for (; i < sizeof(str); i++)
 	{
 		_putchar(str[i]);
 	}
