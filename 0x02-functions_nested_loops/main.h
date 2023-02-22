@@ -23,7 +23,7 @@ void print(char str[])
 {
 	int i = 0;
 
-	for (; i < strlen(str); i++)
+	for (; i < (int)strlen(str); i++)
 	{
 		_putchar(str[i]);
 	}
