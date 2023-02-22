@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
  * print_sign - prints the sign of an integer (+ve or -ve)
  * @n: input integer to get its sign
@@ -12,22 +10,16 @@ int print_sign(int n)
 	if (n > 0)
 	{
 		_putchar('+');
-		_putchar(',');
-		_putchar(' ');
-		_putchar(n + '0');
+		_putchar(1 + '0');
 		return (1);
 	}
 	else if (n == 0)
 	{
 		_putchar('0');
-		_putchar(',');
-		_putchar(' ');
 		_putchar(n + '0');
 		return (0);
 	}
 	_putchar('-');
-	_putchar(',');
-	_putchar(' ');
-	_putchar(n + '0');
+	_putchar(1 + '0');
 	return (-1);
 }
