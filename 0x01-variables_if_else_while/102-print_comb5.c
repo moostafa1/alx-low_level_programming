@@ -64,6 +64,7 @@ int main(void)
 			while (k < max)
 			{
 				int l = 0;
+
 				while (l < max)
 				{
 					if (((k * max) + l) > ((i * max) + j))
