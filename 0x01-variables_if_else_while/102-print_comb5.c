@@ -5,7 +5,7 @@
  * @i: 1st integer to print
  * @j: 2nd integer to print
  * @k: 3rd integer to print
- * @l: 4th integer to print 
+ * @l: 4th integer to print
  */
 
 void print(int i, int j, int k, int l)
@@ -32,8 +32,8 @@ void print(int i, int j, int k, int l)
 
 void condition(int i, int j, int k, int l, int comp)
 {
-        if (i + j + k + l != comp || j > i)
-        {
+	if (i + j + k + l != comp || j > i)
+	{
 		putchar(',');
 		putchar(' ');
 	}
@@ -53,8 +53,8 @@ int main(void)
 	int i = 0;
 	int max = 10;
 
-        while (i < max)
-        {
+	while (i < max)
+	{
 		int j = 0;
 
 		while (j < max)
@@ -62,13 +62,12 @@ int main(void)
 			int k = 0;
 
 			while (k < max)
-                        {
+			{
 				int l = 0;
-
 				while (l < max)
-                                {
+				{
 					if (((k * max) + l) > ((i * max) + j))
-                                        {
+					{
 						print(i, j, k, l);
 						condition(i, j, k, l, (((max - 1) * 3) + (max - 2)));
 					}
