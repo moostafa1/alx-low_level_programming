@@ -1,5 +1,6 @@
+#ifndef "main.h"
 #include "main.h"
-
+#endif
 
 /**
  * main - prints text
