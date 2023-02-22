@@ -2,8 +2,10 @@
 
 /**
  * print - prints text
- * @i: first integer to print
- * @j: second integer to print
+ * @i: 1st integer to print
+ * @j: 2nd integer to print
+ * @k: 3rd integer to print
+ * @l: 4th integer to print 
  */
 
 void print(int i, int j, int k, int l)
@@ -21,15 +23,16 @@ void print(int i, int j, int k, int l)
 
 /**
  * condition - prints text according to specific condition
- * @i : first integer to compare
- * @c1: compare i with it
- * @j : second integer to print
- * @c2: compare j with it
+ * @i: 1st integer to compare
+ * @j: 2nd integer to compare
+ * @k: 3rd integer to compare
+ * @l: 4th integer to compare
+ * @comp: value to set comparision with it
  */
 
 void condition(int i, int j, int k, int l, int comp)
 {
-        if (i + j + k + l != comp)
+        if (i + j + k + l != comp || j > i)
         {
 		putchar(',');
 		putchar(' ');
