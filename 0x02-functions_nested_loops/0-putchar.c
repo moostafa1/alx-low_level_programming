@@ -1,6 +1,25 @@
 #include "main.h"
 
 /**
+ * print - prints the given string
+ *
+ * Return: void
+ */
+
+void print(char str[])
+{
+	int i = 0;
+
+	for (; i < sizeof(str); i++)
+	{
+		_putchar(str[i]);
+	}
+}
+
+
+
+
+/**
  * main - prints text
  *
  * Return: Always (0) Success
@@ -8,15 +27,7 @@
 
 int main(void)
 {
-	char str[] = "_putchar\n";
-	unsigned int i = 0;
-
-	/*for (; i < sizeof(str); i++)
-	*{
-	*	_putchar(str[i]);
-	*}
-	*/
-	_putchar('a');
+	print("_putchar\n");
 	
 	return (0);
 }
