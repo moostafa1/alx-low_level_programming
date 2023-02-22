@@ -18,3 +18,6 @@
 
 
 
+6-abs.c --> computes the absolute value of an integer
+
+
