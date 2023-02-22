@@ -1,5 +1,5 @@
-#ifndef "main.h"
-#include "main.h"
+#ifndef header  "main.h"
+#define header
 #endif
 
 /**
