@@ -1,6 +1,4 @@
-#ifndef header  "main.h"
-#define header
-#endif
+#include "main.h"
 
 /**
  * main - prints text
