@@ -6,11 +6,11 @@
  * Return: void
  */
 
-void print(char str[])
+void print(char str[], int len)
 {
-	unsigned int i = 0;
+	int i = 0;
 
-	for (; i < sizeof(str); i++)
+	for (; i < len; i++)
 	{
 		_putchar(str[i]);
 	}
@@ -27,7 +27,7 @@ void print(char str[])
 
 int main(void)
 {
-	print("_putchar\n");
+	print("_putchar\n", 9);
 	
 	return (0);
 }
