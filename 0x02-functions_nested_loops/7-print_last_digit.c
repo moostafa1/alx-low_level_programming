@@ -1,6 +1,6 @@
 /**
- * print_st_digit - prints the last digit of an integer)
- * @n: input integer to get its last digit
+ * print_last_digit - prints the last digit of an integer)
+ * @i: input integer to get its last digit
  *
  * Return: last digit (0:9)
  */
