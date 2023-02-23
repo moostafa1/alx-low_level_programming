@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * _abs - prints the absolute value of integer
  * @n: input integer to get its sign
