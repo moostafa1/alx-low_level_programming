@@ -9,8 +9,9 @@
 
 void jack_bauer(void)
 {
+	int flag = 0;
 	int hr1 = 2;
-	int hr2 = 3;
+	int hr2 = 9;
 	int min1 = 5;
 	int min2 = 9;
 	int i = 0;
@@ -35,7 +36,17 @@ void jack_bauer(void)
 					_putchar(k + '0');
 					_putchar(l + '0');
 					_putchar('\n');
+
+					if ((i * 10) + j == 23 && (k * 10) + l == 59)
+					{
+						flag = 1;
+						break;
+					}
 				}
+			}
+			if (flag == 1)
+			{
+				break;
 			}
 		}
 	}
