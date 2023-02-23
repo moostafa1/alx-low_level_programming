@@ -1,2 +1,2 @@
 int _putchar(char c);
-int add(int, int);
+void times_table(void);
