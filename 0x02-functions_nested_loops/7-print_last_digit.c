@@ -2,7 +2,7 @@
 
 /**
  * _abs - prints the absolute value of integer
- * @n: input integer to get its sign
+ * @i: input integer to get its sign
  *
  * Return: 1 if +ve, 0 if zero, -1 if -ve
  */
@@ -27,8 +27,9 @@ int _abs(int i)
 
 int print_last_digit(int i)
 {
-	int x = _abs(i) % 10;
+	int x = 0;
 
+	x = _abs(i) % 10;
 	_putchar(x + '0');
 	return (x);
 }
