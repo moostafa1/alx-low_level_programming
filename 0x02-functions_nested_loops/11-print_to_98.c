@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * print_to_98 - prints text according to condition
+ * print - prints text according to condition
  * @n: 1st number
  * @comp: 2nd number
  *
