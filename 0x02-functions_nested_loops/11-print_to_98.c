@@ -23,7 +23,8 @@ void print(int n, int comp)
 
 
 /**
- * print_to_98 - prints all natural numbers from n to 98, followed by a new line
+ * print_to_98 - prints all natural numbers from n to 98
+ * @n: the starting number
  *
  * Return: none
  */
