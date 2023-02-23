@@ -27,9 +27,8 @@ int _abs(int i)
 
 int print_last_digit(int i)
 {
-	int x = 0;
+	int x = i % 10;
 
-	x = _abs(i) % 10;
-	_putchar(x + '0');
-	return (x);
+	_putchar(_abs(x) + '0');
+	return (_abs(x));
 }
