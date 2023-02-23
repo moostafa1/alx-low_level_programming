@@ -13,14 +13,14 @@ int _abs(int i)
 	{
 		return (i * -1);
 	}
-	return i;
+	return (i);
 }
 
 
 
 /**
  * print_last_digit - prints the last digit of an integer)
- * @n: input integer to get its last digit
+ * @i: input integer to get its last digit
  *
  * Return: last digit (0:9)
  */
@@ -28,7 +28,7 @@ int _abs(int i)
 int print_last_digit(int i)
 {
 	int x = _abs(i) % 10;
+
 	_putchar(x + '0');
-	
 	return (x);
 }
