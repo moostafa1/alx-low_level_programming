@@ -6,7 +6,7 @@
  *
  * Return: none
  */
-_putit(int i)
+_putit(char i)
 {
 	_putchar(i);
 }
