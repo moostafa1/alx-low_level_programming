@@ -38,7 +38,7 @@ void more_numbers(void)
 			{
 				_putit(j + '0');
 			}
-			if (j == 14 && i != 9)
+			if (j == 14)
 			{
 				_putit('\n');
 			}
