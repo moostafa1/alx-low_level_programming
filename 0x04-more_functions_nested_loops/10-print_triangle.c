@@ -24,7 +24,7 @@ void print_triangle(int size)
 				}
 				else if (i != 0 && j != size - 1)
 				{
-					_putchar('.');
+					_putchar(' ');
 				}
 			}
 			if (i != 0)
