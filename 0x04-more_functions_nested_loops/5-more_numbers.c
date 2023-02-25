@@ -1,21 +1,9 @@
 #include "main.h"
-
-/**
- * _putit - prints the character given
- * @i: character to print
- *
- * Return: none
- */
-_putit(char i)
-{
-	_putchar(i);
-}
-
-
-
+#include <math.h>
 
 /**
  * more_numbers - prints 10 times the numbers, from 0 to 14
+ * followed by a new line
  *
  * Return: none
  */
@@ -29,18 +17,16 @@ void more_numbers(void)
 
 		for (; j <= 14; j++)
 		{
-			if (j > 9)
+
+			if (j >= 10)
 			{
-				_putit(j / 10 + '0');
-				_putit(j % 10 + '0');
+				_putchar(ceil(j / 10) + '0');
 			}
-			else
+			_putchar(j % 10 + '0');
+
+			if (j == 14 && i != 9)
 			{
-				_putit(j + '0');
-			}
-			if (j == 14)
-			{
-				_putit('\n');
+				_putchar('\n');
 			}
 		}
 
