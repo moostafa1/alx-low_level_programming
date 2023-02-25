@@ -19,3 +19,6 @@
 6-print_line.c --> draws a straight line in the terminal
 
 
+7-print_diagonal.c --> function that draws a diagonal line on the terminal
+
+
