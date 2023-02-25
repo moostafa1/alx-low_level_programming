@@ -37,6 +37,7 @@ void fizz_buzz_test(int s, int n)
 			putchar(' ');
 		}
 	}
+	putchar('\n');
 }
 
 
