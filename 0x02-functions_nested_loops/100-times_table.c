@@ -38,13 +38,12 @@ void condition_1(int x)
  */
 void condition_2(int i, int j, int n)
 {
+	int x_next = i * (j + 1);
 	char space = ' ';
 
 	if (j < n)
 	{
 		_putchar(',');
-
-		int x_next = i * (j + 1);
 
 		if (x_next >= 10 && x_next < 100)
 		{
