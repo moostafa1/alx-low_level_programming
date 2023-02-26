@@ -40,15 +40,13 @@ int main(void)
 {
 
 	int arr[50];
-
-	Fibonacci_arr(arr, 1, 50);
-
 	int i = 0;
 
-	for (; i < sizeof(arr) / 4; i++)
+	Fibonacci_arr(arr, 1, 50);
+	for (; i < 50; i++)
 	{
 		printf("%d", arr[i]);
-		if (i < (sizeof(arr) / 4) - 1)
+		if (i < 49)
 		{
 			putchar(',');
 			putchar(' ');
