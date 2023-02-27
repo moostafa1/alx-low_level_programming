@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * main - prints text
@@ -8,7 +9,7 @@
 
 int main(void)
 {
-	print("_putchar\n");
+	printf("_putchar\n");
 
 	return (0);
 }
