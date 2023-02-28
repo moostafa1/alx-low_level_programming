@@ -1,4 +1,5 @@
 #include "main.h"
+#include <math.h>
 
 /**
  * puts_half - prints half of a string, followed by a new line
@@ -16,7 +17,7 @@ void puts_half(char *s)
 		i++;
 	}
 
-	h = i / 2;
+	h = ceil((float)i / 2);
 	for (; h <= i; h++)
 	{
 		_putchar(s[h]);
