@@ -44,10 +44,10 @@ int main(void)
 	int i = 0;
 
 	Fibonacci_arr(arr, 1, 50);
-	for (; i < sizeof(arr) / 8; i++)
+	for (; i < (int)sizeof(arr) / 8; i++)
 	{
 		printf("%ld", arr[i]);
-		if (i < (sizeof(arr) / 8) - 1)
+		if (i < (int)sizeof(arr) / 8 - 1)
 		{
 			putchar(',');
 			putchar(' ');
