@@ -1,4 +1,3 @@
-#include <math.h>
 #include "main.h"
 
 /**
@@ -17,7 +16,16 @@ void puts_half(char *s)
 		i++;
 	}
 
-	h = ceil((float)i / 2);
+	if (i % 2)
+	{
+		h = (i / 2) + 1;
+	}
+	else
+	{
+		h = (i / 2);
+	}
+
+	printf("%d: %d\n\n", h, i);
 	for (; h <= i; h++)
 	{
 		_putchar(s[h]);
