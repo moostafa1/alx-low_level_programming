@@ -25,7 +25,6 @@ void puts_half(char *s)
 		h = (i / 2);
 	}
 
-	printf("%d: %d\n\n", h, i);
 	for (; h <= i; h++)
 	{
 		_putchar(s[h]);
