@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 
 
@@ -10,7 +11,7 @@
  *
  * Return: 0
  */
-void Fibonacci_arr(int arr[50], int start, int limit)
+void Fibonacci_arr(long arr[50], int start, int limit)
 {
 	int i = 0;
 
@@ -39,14 +40,14 @@ void Fibonacci_arr(int arr[50], int start, int limit)
 int main(void)
 {
 
-	int arr[50];
+	long arr[50];
 	int i = 0;
 
 	Fibonacci_arr(arr, 1, 50);
-	for (; i < 50; i++)
+	for (; i < sizeof(arr) / 8; i++)
 	{
-		printf("%d", arr[i]);
-		if (i < 49)
+		printf("%ld", arr[i]);
+		if (i < (sizeof(arr) / 8) - 1)
 		{
 			putchar(',');
 			putchar(' ');
