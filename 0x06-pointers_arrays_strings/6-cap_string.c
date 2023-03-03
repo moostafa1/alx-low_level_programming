@@ -16,7 +16,7 @@ char *cap_string(char *str)
 	{
 		int j = 0;
 
-		for (; j < sizeof(separators); j++)
+		for (; j < (int)sizeof(separators); j++)
 		{
 			if (str[i] >= 97 && str[i] <= 122)
 			{
