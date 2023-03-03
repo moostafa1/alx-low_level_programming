@@ -43,7 +43,7 @@ int main(void)
 	int i = 0;
 
 	Fibonacci_arr(arr, 1, 50);
-	for (; i < sizeof(arr) / 8; i++)
+	for (; i < (int)sizeof(arr) / 8; i++)
 	{
 		if (i > 9)
 		{
