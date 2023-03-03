@@ -41,31 +41,21 @@ int main(void)
 
 	long arr[50];
 	int i = 0;
-
+	int sum = 0;
 	Fibonacci_arr(arr, 1, 50);
+
+
 	for (; i < (int)sizeof(arr) / 8; i++)
 	{
-		if (i > 9)
+		if (arr[i] <= 4000000 && arr[i] % 2 == 0)
 		{
 			if (arr[i] <= 4000000 && arr[i] % 2 == 0)
 			{
-				printf("%ld", arr[i]);
-				if (arr[i + 1] <= 4000000 && arr[i] % 2 == 0)
-				{
-					putchar(',');
-					putchar(' ');
-				}
-
+				sum += arr[i];
 			}
 		}
-		else
-		{
-			printf("%ld, ", arr[i]);
-		}
-
-
 	}
-	putchar('\n');
+	printf("%ld\n", sum);
 
 	return (0);
 }
