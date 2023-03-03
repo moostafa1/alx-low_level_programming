@@ -41,7 +41,7 @@ int main(void)
 
 	long arr[50];
 	int i = 0;
-	int sum = 0;
+	long sum = 0;
 	Fibonacci_arr(arr, 1, 50);
 
 
