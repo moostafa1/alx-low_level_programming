@@ -12,7 +12,6 @@ char cond(char letter, char a, int val)
 {
 	if (letter == a || letter == a - 32)
 	{
-		printf("letter: %c, %d\n", letter, val);
 		letter = val + '0';
 	}
 	return (letter);
