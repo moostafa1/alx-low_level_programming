@@ -36,7 +36,6 @@ int main(void)
 		}
 	}
 	putchar('\n');
-	printf("i: %d", i);
 
 	return (0);
 }
