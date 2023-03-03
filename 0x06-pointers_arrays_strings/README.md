@@ -7,3 +7,6 @@
 2-strncpy.c --> function that copies a string
 
 
+3-strcmp.c --> unction that compares two strings
+
+
