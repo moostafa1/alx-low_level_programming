@@ -10,3 +10,6 @@
 3-strcmp.c --> unction that compares two strings
 
 
+4-rev_array.c --> function that reverses the content of an array of integers
+
+
