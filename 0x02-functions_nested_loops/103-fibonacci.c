@@ -40,29 +40,28 @@ int main(void)
 {
 
 	long arr[50];
-	Fibonacci_arr(arr, 1, 50);
-
 	int i = 0;
 
+	Fibonacci_arr(arr, 1, 50);
 	for (; i < sizeof(arr) / 8; i++)
 	{
-	    if (i > 9)
-	    {
-    	    if (arr[i] <= 4000000 && arr[i] % 2 == 0)
-    	    {
-    		    printf("%ld", arr[i]);
-    		    if (arr[i + 1] <= 4000000 && arr[i] % 2 == 0)
-        	    {
-            		putchar(',');
-            		putchar(' ');
-        	    }
+		if (i > 9)
+		{
+			if (arr[i] <= 4000000 && arr[i] % 2 == 0)
+			{
+				printf("%ld", arr[i]);
+				if (arr[i + 1] <= 4000000 && arr[i] % 2 == 0)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 
-        	}
-	    }
-    	else
-    	{
-    	    printf("%ld, ", arr[i]);
-    	}
+			}
+		}
+		else
+		{
+			printf("%ld, ", arr[i]);
+		}
 
 
 	}
