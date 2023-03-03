@@ -24,9 +24,5 @@ char *_strcat(char *dest, char *src)
 		j++;
 	}
 
-	for (int i = 0; i < j; i++)
-	{
-		_putchar(j);
-	}
 	return (dest);
 }
