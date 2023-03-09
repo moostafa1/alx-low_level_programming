@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * _puts_recursion - prints text followed by new line
  * @s: text to print
