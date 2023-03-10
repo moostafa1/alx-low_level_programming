@@ -30,5 +30,5 @@ int _sqrt_recursion_2(int n, int y)
  */
 int _sqrt_recursion(int n)
 {
-	return (_sqrt_recursion_2(n, n - 1));
+	return (_sqrt_recursion_2(n, n));
 }
