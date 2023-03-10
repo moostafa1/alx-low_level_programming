@@ -18,6 +18,11 @@ int _sqrt_recursion_2(int n, int y)
 	{
 		return (-1);
 	}
+	if (y > 10000000)
+	{
+		y = y / 1000;
+	}
+
 	return (_sqrt_recursion_2(n, y - 1));
 }
 
