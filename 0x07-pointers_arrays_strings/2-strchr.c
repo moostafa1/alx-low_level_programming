@@ -5,7 +5,6 @@
  * _strchr - function that locates a character in a string
  * @s: input string
  * @c: character to locate
- * @n: number of bytes to fill with s
  *
  * Return: pointer to the first occurrence of c if found, else NULL
  */
