@@ -9,4 +9,15 @@
 
 3-strspn.c --> function that gets the length of a prefix substring {Returns the number of bytes in the initial segment of s which consist only of bytes from accept}
 
+4-strpbrk.c --> function that searches a string for any of a set of bytes {Returns a pointer to the byte in s that matches one of the bytes in accept, or NULL if no such byte is found}
+
+
+5-strstr.c --> function that locates a substring {Returns a pointer to the beginning of the located substring, or NULL if the substring is not found}
+
+
+7-print_chessboard.c --> function that prints the chessboard
+
+
+8-print_diagsums.c --> function that prints the sum of the two diagonals of a square matrix of integers
+
 
