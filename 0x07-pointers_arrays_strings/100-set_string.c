@@ -10,7 +10,5 @@
  */
 void set_string(char **s, char *to)
 {
-	int i = 0;
-
 	*s = to;
 }
