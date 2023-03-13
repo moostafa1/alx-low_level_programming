@@ -102,7 +102,7 @@ int _atoi(char *s)
 	int sign = 1;
 	int last_num = 0;
 	int to_int = 0;
-	int num[len];
+	int num[30];
 	int x = 0;
 
 	for (; s[len] != '\0';)
