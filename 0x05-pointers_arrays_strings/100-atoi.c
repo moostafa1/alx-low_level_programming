@@ -25,59 +25,39 @@ int _pow_recursion(int x, int y)
 
 
 /**
- * str_to_int - converts string into its integer value
- * @num: the character array (string)
- * @to_int: the resulting integer value
- * @x: length of the string
- *
- * Return: void
- */
-void str_to_int(int *num, int *to_int, int x)
-{
-	int j = 0;
-
-	for (; j < x; j++)
-	{
-		int cont = *(num + j) - '0';
-
-		*to_int = *to_int + (cont * _pow_recursion(10, x - 1 - j));
-	}
-}
-
-
-
-
-
-/**
  * _core_loop - contains most of the algorithm
+ * @s: the string that we are extracting integer from
  * @i: loop initializer
  * @len: length of s array
- * @x: represents number of values of num array
- * @sign: represents integer sign  (+ve or -ve)
- * @last_num: index of last continuous digit in s array
- * @num: the integer array in digits (not ascii)
- * @s: the string that we are extracting integer from
- * @flag: detects the presence of digits in the string s
+ * @flag: detects the presence of digits in the string 's'
+ * @num_of_digits: the number of digits in the string
+ * @sign: represents integer sign (+ve or -ve)
+ * @index_start: index of the first digit in the string
  *
  * Return: void
  */
-void _core_loop(int *i, int len, int *x, int *sign,
-		int *last_num, int *num, char *s, int *flag)
+void _core_loop(char *s, int *i, int len, int *flag,
+				int *num_of_digits, int *sign, int *index_start)
 {
 	for (; *i < len; *i = *i + 1)
 	{
 		if (*(s + *i) >= 48 && *(s + *i) <= 57)
 		{
-			*(num + *x) = *(s + *i);
-			*x = *x + 1;
 			*flag = 1;
-			last_num = i;
+			*num_of_digits = *num_of_digits + 1;
 
-			if (*(s + *last_num + 1) < 48 || *(s + *last_num + 1) > 57)
+
+			if (*(s + *i - 1) < 48 || *(s + *i - 1) > 57)
+			{
+				*index_start = *i;
+			}
+
+			if (*(s + *i + 1) < 48 || *(s + *i + 1) > 57)
 			{
 				break;
 			}
 		}
+
 		if (*(s + *i) == '-')
 		{
 			*sign = *sign * -1;
@@ -100,22 +80,31 @@ int _atoi(char *s)
 	int len = 0;
 	int flag = 0;
 	int sign = 1;
-	int last_num = 0;
-	int to_int = 0;
-	int num[30];
-	int x = 0;
+	int index_start = 0;
+	int num_of_digits = 0;
+	int str_to_int = 0;
 
 	for (; s[len] != '\0';)
 		len++;
 
+	_core_loop(s, &i, len, &flag,
+				&num_of_digits, &sign, &index_start);
 
-	_core_loop(&i, len, &x, &sign, &last_num, num, s, &flag);
-	str_to_int(num, &to_int, x);
 
+
+	for (; index_start <= i; index_start++)
+	{
+		int ascii_to_digit = *(s + index_start) - '0';
+
+		str_to_int += (ascii_to_digit * _pow_recursion(10, num_of_digits - 1));
+		num_of_digits--;
+
+	}
 	if (flag == 0)
 	{
 		return (0);
 	}
-	return (to_int * sign);
 
+	return (str_to_int * sign);
 }
+
