@@ -82,7 +82,7 @@ int _atoi(char *s)
 	int sign = 1;
 	int index_start = 0;
 	int num_of_digits = 0;
-	signed int str_to_int = 0;
+	unsigned int str_to_int = 0;
 
 	for (; s[len] != '\0';)
 		len++;
