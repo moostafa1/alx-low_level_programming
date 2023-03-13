@@ -87,7 +87,7 @@ int _atoi(char *s)
 	for (; s[len] != '\0';)
 		len++;
 
-	_core_loop(s, &i, len, &flag,&num_of_digits, &sign, &index_start);
+	_core_loop(s, &i, len, &flag, &num_of_digits, &sign, &index_start);
 
 
 
