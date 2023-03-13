@@ -29,3 +29,6 @@
 
 
 
+100-atoi.c --> function that convert a string to an integer
+
+
