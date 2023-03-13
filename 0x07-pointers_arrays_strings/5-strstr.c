@@ -20,27 +20,33 @@ char *_strstr(char *haystack, char *needle)
 	while (*(needle + len_needle) != '\0')
 		len_needle++;
 
-	for (; *(needle + i) != '\0'; i++)
+	while (*(haystack + i) != '\0')
 	{
 		unsigned int j = 0;
 
-		for (; *(haystack + j) != '\0'; j++)
+		while (*(needle + j) != '\0')
 		{
-			if (*(needle + i) == *(haystack + j))
+			if (*(haystack + i) == *(needle + j))
 			{
 				cnt++;
 				if (cnt == 1)
 				{
-					index_h = j;
-					index_n = i;
-				}
-				if (cnt == len_needle && *(haystack + index_h + cnt - 1)
-							== *(needle + index_n + cnt - 1))
-				{
-					return (haystack + index_h);
+					index_h = i;
+					index_n = j;
 				}
 			}
+			if (*(haystack + index_h + 1) != *(needle + index_n + 1))
+			{
+				cnt = 0;
+			}
+			j++;
 		}
+		if (cnt == len_needle && *(haystack + index_h + cnt - 1)
+								== *(needle + index_n + cnt - 1))
+		{
+			return (haystack + index_h);
+		}
+		i++;
 	}
 	return ('\0');
 }
