@@ -34,6 +34,8 @@ int _atoi(char *s)
 	int i = 0;
 	int len = 0;
 	int flag = 0;
+	int j = 0;
+	int str_to_int = 0;
 
 	for (; s[len] != '\0';)
 		len++;
@@ -50,15 +52,12 @@ int _atoi(char *s)
 		}
 	}
 
-	int j = 0;
-	int str_to_int = 0;
 
 	for (; j < i; j++)
 	{
 		int cont = *(s + j) - '0';
 
 		str_to_int += (cont * _pow_recursion(10, i - 1 - j));
-		int x = _pow_recursion(10, i - 1 - j);
 	}
 
 	if (flag == 0)
