@@ -102,12 +102,12 @@ int _atoi(char *s)
 	int sign = 1;
 	int last_num = 0;
 	int to_int = 0;
+	int num[len];
+	int x = 0;
 
 	for (; s[len] != '\0';)
 		len++;
 
-	int num[len];
-	int x = 0;
 
 	_core_loop(&i, len, &x, &sign, &last_num, num, s, &flag);
 	str_to_int(num, &to_int, x);
