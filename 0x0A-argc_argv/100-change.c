@@ -17,7 +17,7 @@ int convert_coins(int cents)
 
 	for (; i < 4; i++)
 	{
-  		if (cents >= coins[i])
+		if (cents >= coins[i])
 		{
 			int reminder = 0;
 
@@ -28,6 +28,9 @@ int convert_coins(int cents)
 	}
 	return (num_of_coins + cents);
 }
+
+
+
 
 
 /**
@@ -56,5 +59,3 @@ int main(int argc, char *argv[])
 	printf("%d\n", convert_coins(atoi(argv[1])));
 	return (0);
 }
-
-
