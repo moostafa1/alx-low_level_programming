@@ -3,7 +3,7 @@
 
 
 /**
- * create_attay - creates array with size n and values c
+ * create_array - creates array with size n and values c
  * @size: size of array
  * @c: charactet to initialize array with
  *
@@ -19,6 +19,5 @@ char *create_array(unsigned int size, char c)
 		return (NULL);
 	}
 	*s = c;
-	free(s);
 	return (s);
 }
