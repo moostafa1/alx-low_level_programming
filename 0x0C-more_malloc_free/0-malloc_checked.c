@@ -17,8 +17,5 @@ void *malloc_checked(unsigned int b)
 		free(mem);
 		return (NULL);
 	}
-	else
-	{
-		return (mem);
-	}
+	return (mem);
 }
