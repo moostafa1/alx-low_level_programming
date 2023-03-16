@@ -10,6 +10,9 @@ void *malloc_checked(unsigned int b)
 {
 	int *mem;
 
+	if (b == 0 || b == NULL)
+		return (NULL);
+
 	mem = malloc(b);
 
 	if (mem == NULL || mem == 0)
