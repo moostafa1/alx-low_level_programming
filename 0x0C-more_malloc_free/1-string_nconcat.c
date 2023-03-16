@@ -56,11 +56,16 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (str == NULL || str == 0)
 	{
+		free(str);
 		return (NULL);
 	}
 
 	copy_str(s1, str, 0, length(s1));
-	copy_str(s2, str, length(s1), length(s1) + n);
+	if (n < length(s2))
+	{
+		copy_str(s2, str, length(s1), length(s1) + n);
+	}
+	copy_str(s2, str, length(s1), length(s1) + length(s2));
 	*(str + length(s1) + n) = '\0';
 	return (str);
 }
