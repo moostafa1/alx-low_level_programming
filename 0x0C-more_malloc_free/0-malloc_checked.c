@@ -10,16 +10,16 @@ void *malloc_checked(unsigned int b)
 {
 	int *mem;
 
-	if (b == 0)
-	{
-		b = 98;
-	}
-
 	mem = malloc(b);
 
-	if (mem == NULL)
+	if (mem == NULL || mem == 0)
 	{
+		free(mem);
 		return (NULL);
 	}
-	return (mem);
+	else
+	{
+		return (mem);
+	}
 }
+
