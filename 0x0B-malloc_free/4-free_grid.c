@@ -9,14 +9,16 @@
  */
 void free_grid(int **grid, int height)
 {
+	int i = 0;
+
 	if (grid == NULL)
 	{
 		printf("OK\n");
 		exit(0);
 	}
-	for (; (height - 1) >= 0; height--)
+	for (; i < height; i++)
 	{
-		free(*(grid + height));
+		free(*(grid + i));
 	}
 	free(grid);
 	exit(0);
