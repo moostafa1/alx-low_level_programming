@@ -11,8 +11,7 @@ void free_grid(int **grid, int height)
 {
 	if (grid == NULL || grid == 0)
 	{
-		printf("OK\n");
-		exit(0);
+		return;
 	}
 	for (; height >= 0; height--)
 	{
