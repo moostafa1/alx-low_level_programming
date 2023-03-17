@@ -12,10 +12,13 @@ void *malloc_checked(unsigned int b)
 
 	mem = malloc(b);
 
-	if (mem == NULL)
+	if (mem == NULL || mem == 0)
 	{
-		mem = malloc(98);
+		free(mem);
+		return (NULL);
 	}
-	return (mem);
+	else
+	{
+		return (mem);
+	}
 }
-
