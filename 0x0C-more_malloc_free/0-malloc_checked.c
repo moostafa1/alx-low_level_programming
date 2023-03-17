@@ -13,9 +13,9 @@ void *malloc_checked(unsigned int b)
 	mem = malloc(b);
 
 	if (mem == NULL || mem == 0)
+
 	{
-		free(mem);
-		return (NULL);
+		return (98);
 	}
 	else
 	{
