@@ -9,7 +9,7 @@
  */
 void free_grid(int **grid, int height)
 {
-	if (grid == NULL)
+	if (grid == NULL || grid == 0)
 	{
 		printf("OK\n");
 		exit(0);
