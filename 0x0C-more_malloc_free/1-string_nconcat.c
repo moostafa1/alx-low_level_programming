@@ -71,7 +71,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		copy_str(s2, str, length(s1), length(s1) + n);
 		*(str + length(s1) + n) = '\0';
 	}
-	else if (n >= length(s2))
+	else if (n >= (unsigned int)length(s2))
 	{
 		copy_str(s2, str, length(s1), length(s1) + length(s2));
 		*(str + length(s1) + length(s2)) = '\0';
