@@ -14,7 +14,7 @@ void free_grid(int **grid, int height)
 		printf("OK\n");
 		exit(0);
 	}
-	for (; height >= 0; height--)
+	for (; (height - 1) >= 0; height--)
 	{
 		free(*(grid + height));
 	}
