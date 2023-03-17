@@ -15,7 +15,7 @@ void free_grid(int **grid, int height)
 		{
 			break;
 		}
-		free(*(grid + height));
+		free(*(*grid + height));
 	}
 	free(grid);
 }
