@@ -7,3 +7,6 @@
 2-calloc.c --> function that allocates memory for an array, using malloc
 
 
+3-array_range.c --> function that creates an array of integers
+
+
