@@ -19,7 +19,7 @@ void *malloc_checked(unsigned int b)
 
 	if (mem == NULL)
 	{
-		mem = malloc(98);
+		return (NULL);
 	}
 	return (mem);
 }
