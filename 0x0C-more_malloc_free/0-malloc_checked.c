@@ -9,15 +9,12 @@
 void *malloc_checked(unsigned int b)
 {
 	int *mem;
-	int val = 98;
-	int *p_val = &val;
 
 	mem = malloc(b);
-
 	if (mem == NULL || mem == 0)
 
 	{
-		return (p_val);
+		exit(98);
 	}
 
 	return (mem);
