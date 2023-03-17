@@ -2,17 +2,20 @@
 
 /**
  * _calloc - allocates memory for an array, using malloc
- * @nmemb: value to fill memory with
- * @size: size of array
+ * @nmemb: number of array elements
+ * @size: size of each element
  *
  *Return: void
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	int *arr;
-	int i = 0;
+	unsigned int i = 0;
 
-	arr = malloc(sizeof(*arr) * size);
+	if (nmemb == 0 || size == 0)
+		return (NULL);
+
+	arr = malloc(nmemb * size);
 	if (arr == NULL || arr == 0)
 		return (NULL);
 
