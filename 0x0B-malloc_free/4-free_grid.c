@@ -9,15 +9,11 @@
  */
 void free_grid(int **grid, int height)
 {
-	if (grid == NULL || grid == 0)
+	int i = 0;
+
+	for (; i < height; i++)
 	{
-		printf("OK\n");
-		exit(0);
-	}
-	for (; height >= 0; height--)
-	{
-		free(*(grid + height));
+		free(grid[i]);
 	}
 	free(grid);
-	exit(0);
 }
