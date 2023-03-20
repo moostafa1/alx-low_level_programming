@@ -43,7 +43,7 @@ int **alloc_grid(int width, int height)
 
 		for (; c < width; c++)
 		{
-		*((*arr_2d + r) + r * width + c) = 0;
+		*(*(arr_2d + r) + c) = 0;
 		}
 	}
 	return (arr_2d);
