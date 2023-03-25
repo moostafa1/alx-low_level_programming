@@ -4,3 +4,6 @@
 1-print_numbers.c --> function that prints numbers, followed by a new line
 
 
+2-print_strings.c --> function that prints strings, followed by a new line
+
+
