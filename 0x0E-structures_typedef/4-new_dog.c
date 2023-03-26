@@ -25,17 +25,16 @@ int _strlen(char *s)
  * @s1: string to copy
  * @s2: string to copy in
  *
- * Return: copy of the string
+ * Return: void
  */
-char *_strcpy(char *s1, char *s2)
+void _strcpy(char *s1, char *s2)
 {
 	int i = 0;
 
 	for (; i < _strlen(s1); i++)
 	{
-		s2[i] = s1[i];
+		*(s2 + i) = *(s1 + i);
 	}
-	return (s2);
 }
 
 
@@ -78,9 +77,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	d->name = _strcpy(name, d->name);
+	 _strcpy(name, d->name);
 	d->age = age;
-	d->owner = _strcpy(owner, d->owner);
+	_strcpy(owner, d->owner);
 
 	return (d);
 }
