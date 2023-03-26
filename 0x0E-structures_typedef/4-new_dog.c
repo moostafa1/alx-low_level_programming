@@ -33,7 +33,7 @@ char *_strcpy(char *s1, char *s2)
 
 	for (; i < _strlen(s1); i++)
 	{
-		*(s2 + i) = *(s1 + i);
+		s2[i] = s1[i];
 	}
 	return (s2);
 }
