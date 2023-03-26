@@ -20,8 +20,10 @@ int _strlen(char *s)
 
 
 
-/** _strcpy - set string value to another string
- * *s1: string to copy
+/**
+ * _strcpy - set string value to another string
+ * @s1: string to copy
+ * @s2: string to copy in
  *
  * Return: copy of the string
  */
@@ -37,24 +39,6 @@ char *_strcpy(char *s1, char *s2)
 }
 
 
-
-
-
-/**
- * free_fail - free the allocated space if malloc fails
- * @s: space to free
- *
- * Return: s if success, else NULL
- */
-char *free_fail(char *s)
-{
-	if (s == NULL)
-	{
-		free(s);
-		return (NULL);
-	}
-	return (s);
-}
 
 
 
@@ -81,11 +65,20 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 	cp_name = malloc(_strlen(name) + 1);
-	free_fail(cp_name);
-	cp_name = _strcpy(name, cp_name);
+	if (cp_name == NULL)
+	{
+		free(cp_name);
+		return (NULL);
+	}
 
 	cp_owner = malloc(_strlen(owner) + 1);
-	free_fail(cp_owner);
+	if (cp_owner == NULL)
+	{
+		free(cp_owner);
+		return (NULL);
+	}
+
+	cp_name = _strcpy(name, cp_name);
 	cp_owner = _strcpy(owner, cp_owner);
 
 	d->name = name;
