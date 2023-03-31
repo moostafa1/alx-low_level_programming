@@ -33,8 +33,6 @@ void print_all(const char * const format, ...)
 	char *space;
 	va_list args;
 
-	if (format == NULL)
-		return;
 	va_start(args, format);
 	while (*(format + i) != '\0')
 	{
