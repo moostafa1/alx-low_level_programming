@@ -1,4 +1,6 @@
 #include "variadic_functions.h"
+#include <stddef.h>
+
 
 /**
  * print_str - prints string, else (nil)
@@ -31,7 +33,7 @@ void print_all(const char * const format, ...)
 	char *space;
 	va_list args;
 
-	if (!format)
+	if (format == NULL)
 		return;
 	va_start(args, format);
 	while (*(format + i) != '\0')
