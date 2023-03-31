@@ -1,25 +1,5 @@
 #include "variadic_functions.h"
 
-
-/**
- * print_str - prints string, else (nil)
- * @arg: input value of type string
- * @space: separator between values
- *
- * Return: string
- */
-void print_str(va_list arg, char *space)
-{
-	char *str;
-
-	str = va_arg(arg, char *);
-	if (str == '\0')
-		str = "(nil)";
-	printf("%s", str, space);
-}
-
-
-
 /**
  * print_all - prints anything (char, int, float, double)
  * @format: input list of variadic values
@@ -29,7 +9,7 @@ void print_str(va_list arg, char *space)
 void print_all(const char * const format, ...)
 {
 	int i = 0;
-	int c = 0;
+	char *str;
 	char *space;
 	va_list args;
 
@@ -42,7 +22,11 @@ void print_all(const char * const format, ...)
 		switch (*(format + i))
 		{
 		case 's':
-			print_str(args, space);
+			str = va_arg(args, char *);
+			if (!str)
+				str = "(nil)";
+			printf("%s%s", str, space);
+
 			break;
 		case 'c':
 			printf("%c%s", (char)va_arg(args, int), space);
@@ -58,4 +42,3 @@ void print_all(const char * const format, ...)
 	}
 	putchar('\n');
 }
-
