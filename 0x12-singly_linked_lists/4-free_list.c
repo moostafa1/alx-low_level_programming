@@ -8,7 +8,14 @@
  */
 void free_list(list_t *head)
 {
+	list_t *last_node = head;
+
 	if (!head)
 		return;
-	free(head);
+
+	while (last_node->next)
+	{
+		free(last_node);
+		last_node = last_node->next;
+	}
 }
