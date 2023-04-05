@@ -10,8 +10,11 @@ void free_listint2(listint_t **head)
 {
 	listint_t *next_node;
 
-	if (*head == NULL)
+	if (!*head)
+	{
+		printf("Freed!\n");
 		return;
+	}
 
 	while (*head)
 	{
