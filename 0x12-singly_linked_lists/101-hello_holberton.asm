@@ -12,5 +12,5 @@ _start:
 	int 0x080
 
 section .data
-	msg db "Hello, Holberton",0xa
+	msg db "Hello, Holberton",10
 	len equ $-msg
