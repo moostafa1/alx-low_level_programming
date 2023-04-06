@@ -58,7 +58,7 @@ int _strlen(const char *s)
  */
 char *argstostr(int ac, char **av)
 {
-	int i = 1;
+	int i = 0;
 	char *str;
 	int len;
 	int str_len = 0;
@@ -71,7 +71,7 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || !av || !*av || !str)
 		return (NULL);
 
-	for (i = 1; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
 		_strcpy(&str[str_len], av[i]);
 		str_len += _strlen(av[i]);
