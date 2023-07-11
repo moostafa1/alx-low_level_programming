@@ -8,11 +8,11 @@
  * Return: 1 if succeeded, else 0
  */
 int set_bit(unsigned long int *n, unsigned int index)
- {
+{
  	if (!*n)
 		return (-1);
 
 	*n = (*n & ~(1l << index)) | (1l << index);
 
 	return (1);
- }
+}
