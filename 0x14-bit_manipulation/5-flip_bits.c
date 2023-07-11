@@ -12,7 +12,7 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned int x_or = n ^ m;
+	unsigned long int x_or = n ^ m;
 	unsigned int bit = sizeof(x_or) * 8;
 	unsigned int counter = 0;
 
