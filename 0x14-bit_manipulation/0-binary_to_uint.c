@@ -23,6 +23,25 @@ unsigned int power_n(unsigned int num, unsigned int power)
 
 
 
+/**
+ * _strlen - gets the length of the string
+ * @b: input string
+ *
+ * Return: length of b
+ */
+unsigned int _strlen(const char *b)
+{
+	unsigned int len = 0;
+
+	if (b == NULL)
+		return (0);
+	while (*b++)
+		len++;
+	return (len);
+}
+
+
+
 
 /**
  * binary_to_uint -  converts a binary number to an unsigned int
@@ -32,7 +51,7 @@ unsigned int power_n(unsigned int num, unsigned int power)
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int power = strlen(b) - 1;
+	unsigned int power = _strlen(b) - 1;
 	unsigned int decimal = 0, i = 0;
 
 	if (b == NULL)
