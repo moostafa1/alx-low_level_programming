@@ -35,7 +35,7 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int power = strlen(b) - 1;
 	unsigned int decimal = 0, i = 0;
 
-	if (b == NULL)
+	if (!*b)
 		return (0);
 
 	for (; i < strlen(b); i++)
