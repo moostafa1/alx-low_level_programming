@@ -10,7 +10,7 @@
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	if (!*n || !index)
+	if (!*n)
 		return (-1);
 	*n = ((*n & ~(1 << index)) | (0 << index));
 	return (1);
