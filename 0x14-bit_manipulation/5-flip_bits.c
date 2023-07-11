@@ -4,7 +4,7 @@
 
 
 /**
- * clear_bit - returns the number of bits you would need to flip to get from
+ * flip_bits - returns the number of bits you would need to flip to get from
  * one number to another.
  * @n: 1st number in decimal
  * @m: 2nd number in decimal
@@ -19,9 +19,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	while (bit)
 	{
 		if (x_or & 1l << --bit)
-		{
-			counter ++;
-		}
+			counter++;
 	}
 
 	return (counter);
