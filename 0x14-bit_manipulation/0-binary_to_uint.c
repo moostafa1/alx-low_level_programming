@@ -11,9 +11,9 @@
  */
 unsigned int power_n(unsigned int num, unsigned int power)
 {
-	unsigned int powered_num = 1;
+	unsigned int powered_num = 1, i = 0;
 
-	for (unsigned int i = 0; i < power; i++)
+	for (; i < power; i++)
 	{
 		powered_num *= num;
 	}
@@ -32,13 +32,13 @@ unsigned int power_n(unsigned int num, unsigned int power)
  */
 unsigned int binary_to_uint(const char *b)
 {
+	unsigned int power = strlen(b) - 1;
+	unsigned int decimal = 0, i = 0;
+
 	if (b == NULL)
 		return (0);
 
-	unsigned int power = strlen(b) - 1;
-	unsigned int decimal = 0;
-
-	for (unsigned int i = 0; i < power; i++)
+	for (; i < strlen(b); i++)
 	{
 		if (*(b + i) != 48 && *(b + i) != 49)
 			return (0);
