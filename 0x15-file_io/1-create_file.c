@@ -10,21 +10,18 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	FILE *fptr;
-	int flag = 0;
+	int fo = 0, fw = 0;
 
 	if (filename == NULL)
 		return (-1);
 
-	fptr = fopen(filename, "a+");
+	fo = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
+	fw = write(fo, text_content, sizeof(text_content));
 
-	if (!fptr)
+	if (fo == -1 || fw == -1)
 		return (-1);
 
-	flag = fwrite(text_content, sizeof(char), sizeof(text_content), fptr);
-	if (!flag)
-		return (-1);
-	fclose(fptr);
+	close(fo);
 
 	return (1);
 }
