@@ -10,13 +10,17 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fo = 0, fw = 0;
+	int fo = 0, fw = 0, len = 0;
 
 	if (filename == NULL)
 		return (-1);
+	if (text_content != NULL)
+	{
+		len = sizeof(text_content);
+	}
 
 	fo = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
-	fw = write(fo, text_content, sizeof(text_content));
+	fw = write(fo, text_content, len);
 
 	if (fo == -1 || fw == -1)
 		return (-1);
