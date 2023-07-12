@@ -21,7 +21,7 @@ int create_file(const char *filename, char *text_content)
 	if (!fptr)
 		return (-1);
 
-	flag = fwrite(text_content, sizeof(text_content), sizeof(text_content), fptr);
+	flag = fwrite(text_content, sizeof(char), sizeof(text_content), fptr);
 	if (!flag)
 		return (-1);
 	fclose(fptr);
