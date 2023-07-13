@@ -2,6 +2,24 @@
 
 
 /**
+ * _strlen - length of string
+ * @s: input string
+ *
+ * Return: length
+ */
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (*s++)
+		len++;
+	return (len);
+}
+
+
+
+
+/**
  * create_file - creates a file
  * @filename: name of the file
  * @text_content: NULL terminated string to write to the file
@@ -16,7 +34,7 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	if (text_content != NULL)
 	{
-		len = (int)sizeof(text_content) / sizeof(char) - 1;
+		len = _strlen(text_content);
 	}
 
 	fo = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);

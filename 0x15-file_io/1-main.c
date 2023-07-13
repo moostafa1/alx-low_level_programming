@@ -18,5 +18,11 @@ int main(int ac, char **av)
     }
     res = create_file(av[1], av[2]);
     printf("-> %i)\n", res);
+    res = create_file("_file_0", "Best School !");
+    printf("-> %i)\n", res);
+    res = create_file("_file_0", "Best School !");
+    printf("-> %i)\n", res);
+    create_file("_file_0", "Hello_World");
+    printf("-> %i)\n", res);
     return (0);
 }
