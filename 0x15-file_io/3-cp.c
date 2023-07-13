@@ -83,7 +83,7 @@ int main(int argc, char **argv)
 
 	f2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0600);
 	r2 = read(f2, buf, _strlen(buf));
-	w2 = write(STDOUT_FILENO, buf, r2);
+	w2 = write(f2, buf, r2);
 	if (f2 == -1 || r2 == -1 || w2 == -1)
 	{
 		fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
