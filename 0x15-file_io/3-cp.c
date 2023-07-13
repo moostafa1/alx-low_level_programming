@@ -55,11 +55,6 @@ char *file_data(char *file)
 		i++;
 	}
 	fclose(fp);
-	if (!fclose(fp))
-	{
-		fprintf(stderr, "Error: Can't close fd %d\n", fileno(fp));
-		exit(100);
-	}
 	return (buffer);
 }
 
@@ -76,7 +71,7 @@ char *file_data(char *file)
 int main(int argc, char **argv)
 {
 	char *buf;
-	int f2 = 0, w2 = 0;
+	int f2 = 0, r2 = 0, w2 = 0;
 
 	if (argc != 3)
 	{
@@ -87,18 +82,13 @@ int main(int argc, char **argv)
 	buf = file_data(argv[1]);
 
 	f2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0600);
-	w2 = write(f2, buf, _strlen(buf));
-	if (f2 == -1 || w2 == -1)
+	r2 = read(f2, buf, _strlen(buf));
+	w2 = write(STDOUT_FILENO, buf, r2);
+	if (f2 == -1 || r2 == -1 || w2 == -1)
 	{
 		fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	close(f2);
-	if (close(f2) == -1)
-	{
-		fprintf(stderr, "Error: Can't close fd %d\n", f2);
-		exit(100);
-	}
-
 	return (0);
 }
