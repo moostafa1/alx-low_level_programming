@@ -45,6 +45,7 @@ char *file_data(char *file)
 		counter++;
 
 	buffer = malloc(counter + 1);
+	buffer[_strlen(buffer)] = '\0';
 	if (!buffer)
 		return (NULL);
 
@@ -79,7 +80,7 @@ int main(int argc, char **argv)
 
 	buf = file_data(argv[1]);
 
-	f2 = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0600);
+	f2 = open(argv[2], O_CREAT | O_APPEND | O_WRONLY | O_TRUNC, 0600);
 	w2 = write(f2, buf, _strlen(buf));
 	if (f2 == -1 || w2 == -1)
 	{
