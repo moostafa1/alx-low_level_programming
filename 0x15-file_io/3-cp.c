@@ -45,6 +45,7 @@ char *file_data(char *file)
 		counter++;
 
 	buffer = malloc(counter + 1);
+	buffer[_strlen(buffer)] = '\n';
 	if (!buffer)
 		return (NULL);
 
