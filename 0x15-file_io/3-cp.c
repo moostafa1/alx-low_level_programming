@@ -62,10 +62,11 @@ char *file_data(char *file)
 
 
 /**
- * _strlen - gets the length of a string
- * @s: input string
+ * main - copy conternt of first file to the second one
+ * @argc: number of given command line arguments
+ * @argv: command line arguments
  *
- * Return: length of the string
+ * Return: 0
  */
 int main(int argc, char **argv)
 {
