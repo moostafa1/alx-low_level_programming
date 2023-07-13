@@ -85,7 +85,7 @@ int main(int argc, char **argv)
 	w2 = write(f2, buf, _strlen(buf));
 	if (f2 == -1 || w2 == -1)
 	{
-		dprintf(stderr, "Error: Can't write to %s\n", argv[2]);
+		fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	close(f2);
