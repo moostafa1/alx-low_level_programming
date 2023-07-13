@@ -55,6 +55,11 @@ char *file_data(char *file)
 		i++;
 	}
 	fclose(fp);
+	if (!fclose(fp))
+	{
+		fprintf(stderr, "Error: Can't close fd %d\n", fileno(fp));
+		exit(100);
+	}
 	return (buffer);
 }
 
@@ -81,7 +86,7 @@ int main(int argc, char **argv)
 
 	buf = file_data(argv[1]);
 
-	f2 = open(argv[2], O_CREAT | O_APPEND | O_WRONLY | O_TRUNC, 0600);
+	f2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0600);
 	w2 = write(f2, buf, _strlen(buf));
 	if (f2 == -1 || w2 == -1)
 	{
@@ -89,6 +94,11 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 	close(f2);
+	if (close(f2) == -1)
+	{
+		fprintf(stderr, "Error: Can't close fd %d\n", f2);
+		exit(100);
+	}
 
 	return (0);
 }
