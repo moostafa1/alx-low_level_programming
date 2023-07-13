@@ -55,11 +55,6 @@ char *file_data(char *file)
 		i++;
 	}
 	fclose(fp);
-	if (!fclose(fp))
-	{
-		fprintf(stderr, "Error: Can't close fd %d\n", fileno(fp));
-		exit(100);
-	}
 	return (buffer);
 }
 
@@ -94,11 +89,5 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 	close(f2);
-	if (close(f2) == -1)
-	{
-		fprintf(stderr, "Error: Can't close fd %d\n", f2);
-		exit(100);
-	}
-
 	return (0);
 }
