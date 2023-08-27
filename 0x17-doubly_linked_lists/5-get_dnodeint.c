@@ -3,7 +3,7 @@
 /**
  * get_dnodeint_at_index - returns node with specific index
  * @head: pointer to the first element of doubly linked list
- * index: position of the element to remove
+ * @index: position of the element to remove
  *
  * Return: nth node of a dlistint_t linked list
  */
