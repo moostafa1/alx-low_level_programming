@@ -1,49 +1,52 @@
 #include "lists.h"
 
 /**
- * insert_dnodeint_at_index - adds a node at a specific position
- * @h: position of the 1st node of a doubly linked list
- * @idx: position to add element in it
- * @n: value to add
+ * insert_dnodeint_at_index - get node at a predefined index
+ * @h: head of Linked List
+ * @idx: index to retrive the node from
+ * @n: value of the new node
  *
- * Return: address of the new node, or NULL if it failed
+ * Return: dnode
  */
+
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	unsigned int len = 0;
-	dlistint_t *temp = NULL, *p;
+	unsigned int count = 0;
+	dlistint_t *new_node = NULL, *head;
 
-	if (!h)
-		return (NULL);
-	p = *h;
-	for (; p; len++)
-		p = p->next;
-	if (idx > len)
+	if (h == NULL)
 		return (NULL);
 	if (idx == 0)
-		temp = add_dnodeint(h, n);
-	p = *h;
-	for (len = 0; p; len++)
+		new_node = add_dnodeint(h, n);
+	else
 	{
-		if (idx == len)
+		head = *h;
+		while (head->prev != NULL) /*make sure I'm at head*/
+			head = head->prev;
+
+		while (head)
 		{
-			if (p->next == NULL)
-				temp = add_dnodeint_end(h, n);
-			else
+			if (idx == count)
 			{
-				temp = malloc(sizeof(temp));
-				if (temp)
+				if (head->next == NULL)
+					new_node = add_dnodeint_end(h, n);
+				else
 				{
-					temp->n = n;
-					temp->prev = p->prev;
-					temp->next = p;
-					p->prev->next = temp;
-					p->prev = temp;
+					new_node = malloc(sizeof(dlistint_t));
+					if (new_node != NULL)
+					{
+						new_node->n = n;
+						new_node->prev = head->prev;
+						new_node->next = head;
+						head->prev->next = new_node;
+						head->prev = new_node;
+					}
 				}
+				break;
 			}
-			break;
+			count++;
+			head = head->next;
 		}
-		p = p->next;
 	}
-	return (temp);
+	return (new_node);
 }
