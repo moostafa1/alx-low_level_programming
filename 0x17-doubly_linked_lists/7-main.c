@@ -25,6 +25,7 @@ int main(void)
     printf("-----------------\n");
     insert_dnodeint_at_index(&head, 5, 4096);
     insert_dnodeint_at_index(&head, 9, -6);
+    insert_dnodeint_at_index(&head, 4, -677);
     print_dlistint(head);
     free_dlistint(head);
     head = NULL;
