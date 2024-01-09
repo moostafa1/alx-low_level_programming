@@ -94,6 +94,7 @@ int main(int argc, char **argv)
 	}
 
 	f2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	chmod(argv[2], 0664);
 	w2 = write(f2, buf, _strlen(buf));
 	if (f2 == -1 || w2 == -1)
 	{
