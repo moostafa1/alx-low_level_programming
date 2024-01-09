@@ -36,7 +36,7 @@ char *file_data(char *file)
 	unsigned int counter = 0, i = 0;
 
 	fp = fopen(file, "r");
-	if (!file)
+	if (!file || !fp)
 	{
 		fprintf(stderr, "Error: Can't read from file %s\n", file);
 		exit(98);
@@ -45,15 +45,21 @@ char *file_data(char *file)
 		counter++;
 
 	buffer = malloc(counter + 1);
-	buffer[_strlen(buffer)] = '\0';
 	if (!buffer)
+	{
+		fclose(fp);
 		return (NULL);
+	}
+
+	fseek(fp, 0, SEEK_SET); /* Reset file pointer to the file beginning */
 
 	for (c = getc(fp); c != EOF; c = getc(fp))
 	{
 		*(buffer + i) = c;
 		i++;
 	}
+
+	buffer[counter] = '\0';
 	fclose(fp);
 	return (buffer);
 }
@@ -71,7 +77,7 @@ char *file_data(char *file)
 int main(int argc, char **argv)
 {
 	char *buf;
-	int f2 = 0, r2 = 0, w2 = 0;
+	int f2 = 0, w2 = 0;
 
 	if (argc != 3)
 	{
@@ -81,14 +87,20 @@ int main(int argc, char **argv)
 
 	buf = file_data(argv[1]);
 
+	if (!buf)
+	{
+		fprintf(stderr, "Error: Memory allocation failed\n");
+		exit(99);
+	}
+
 	f2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0600);
-	r2 = read(f2, buf, _strlen(buf));
-	w2 = write(f2, buf, r2);
-	if (f2 == -1 || r2 == -1 || w2 == -1)
+	w2 = write(f2, buf, _strlen(buf));
+	if (f2 == -1 || w2 == -1)
 	{
 		fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	close(f2);
+	free(buf);
 	return (0);
 }
