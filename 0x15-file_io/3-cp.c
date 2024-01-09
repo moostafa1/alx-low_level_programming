@@ -94,13 +94,19 @@ int main(int argc, char **argv)
 	}
 
 	f2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0600);
-	w2 = write(f2, buf, _strlen(buf));
-	if (f2 == -1 || w2 == -1)
+	if (f2 == -1)
 	{
 		fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
+	chmod(argv[2], 0664);
 
+	w2 = write(f2, buf, _strlen(buf));
+	if (w2 == -1)
+	{
+		fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
+		exit(99);
+	}
 	close(f2);
 	free(buf);
 	return (0);
