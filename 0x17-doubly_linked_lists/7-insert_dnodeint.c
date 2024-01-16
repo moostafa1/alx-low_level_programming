@@ -5,16 +5,20 @@
  * insert_node_begin_end - adds a node either at beginning or at end
  * to a doubly linked list
  * @h: position of the 1st node of a doubly linked list
- * @temp: temporary pointer to the head
  * @idx: position to add element in it
  * @len: length of the list
  * @n: value to add
  *
  * Return: address of the new node, or NULL if it failed
  */
-dlistint_t *insert_node_begin_end(dlistint_t **h, dlistint_t *temp,
-		unsigned int idx, unsigned int len, int n)
+dlistint_t *insert_node_begin_end(dlistint_t **h, unsigned int idx,
+		unsigned int len, int n)
 {
+	dlistint_t *temp = malloc(sizeof(*temp));
+
+	if (!temp)
+		return (NULL);
+
 	if (idx > len)
 	{
 		free(temp);
@@ -37,7 +41,8 @@ dlistint_t *insert_node_begin_end(dlistint_t **h, dlistint_t *temp,
 		return (temp);
 	}
 
-	return (temp);
+	free(temp);
+	return (NULL);
 }
 
 
@@ -64,7 +69,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	for (; p; len++)
 		p = p->next;
 
-	insert_node_begin_end(h, temp, idx, len, n);
+	insert_node_begin_end(h, idx, len, n);
 
 	p = *h;
 	for (len = 0; p && len < idx - 1; len++)
