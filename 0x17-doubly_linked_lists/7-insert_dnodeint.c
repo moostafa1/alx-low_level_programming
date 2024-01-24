@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * insert_node_begin_end - adds a node either at beginning or at end
+ * insert_node_begin_end - adds a node either at the beginning or at end
  * to a doubly linked list
  * @h: position of the 1st node of a doubly linked list
  * @idx: position to add element in it
@@ -80,6 +80,9 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
             p->next->prev = temp;
         temp->prev = p;
         p->next = temp;
+
+        if (temp->next)
+            temp->next->prev = temp;
     }
     else
     {
