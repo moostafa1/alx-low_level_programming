@@ -12,12 +12,12 @@
  * Return: address of the new node, or NULL if it failed
  */
 dlistint_t *insert_node_begin_end(dlistint_t **h, unsigned int idx,
-                                  unsigned int len, int n, dlistint_t *temp)
+                                  unsigned int *len, int n, dlistint_t *temp)
 {
     if (!temp)
         return (NULL);
 
-    if (idx > len)
+    if (idx > *len)
     {
         free(temp);
         return (NULL);
@@ -30,12 +30,14 @@ dlistint_t *insert_node_begin_end(dlistint_t **h, unsigned int idx,
     if (idx == 0)
     {
         add_dnodeint(h, n);
+	(*len)++;
         return (temp);
     }
 
-    if (idx == len - 1)
+    if (idx == *len)
     {
         add_dnodeint_end(h, n);
+	(*len)++;
         return (temp);
     }
 
@@ -64,13 +66,13 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
     for (; p; len++)
         p = p->next;
 
-    temp = insert_node_begin_end(h, idx, len, n, temp);
+    temp = insert_node_begin_end(h, idx, &len, n, temp);
 
     if (!temp)
         return (NULL);
 
     p = *h;
-    for (len = 0; p && len < idx - 1; len++)
+    for (len = 0; p && len < idx - 2; len++)
         p = p->next;
 
     if (p)
@@ -80,9 +82,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
             p->next->prev = temp;
         temp->prev = p;
         p->next = temp;
-
-        if (temp->next)
-            temp->next->prev = temp;
     }
     else
     {
