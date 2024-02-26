@@ -27,9 +27,3 @@ oclean:
 fclean: clean oclean
 
 re: fclean all
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
