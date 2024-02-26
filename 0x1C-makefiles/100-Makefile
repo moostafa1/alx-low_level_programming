@@ -9,7 +9,7 @@ OBJ = $(SRC:.c=.o)
 
 
 # build executables for updated files
-all: $(NAME)
+all: m.h $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) ${OBJ} -o $(NAME)
